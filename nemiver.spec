@@ -1,5 +1,5 @@
 %define name	nemiver
-%define version	0.3.0
+%define version	0.4.0
 %define release %mkrel 1
 %define major 0
 %define lib_name %mklibname %{name} %{major}
