@@ -28,6 +28,7 @@ BuildRequires: libgtop2.0-devel
 BuildRequires: desktop-file-utils
 BuildRequires: libsm-devel
 BuildRequires: ImageMagick
+BuildRequires: gnome-doc-utils
 
 Requires: gdb
 
