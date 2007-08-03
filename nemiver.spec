@@ -11,6 +11,8 @@ Release: 	%{release}
 
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{version}/%{name}-%{version}.tar.bz2
 Source1:	%name.png
+# (fc) 0.4.0-1mdv fix build with libgtop HEAD (SVN)
+Patch0:		nemiver-0.4.0-libgtop.patch
 URL:		http://home.gna.org/nemiver/
 License:	GPL
 Group:		Development/Other
@@ -18,6 +20,7 @@ BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 BuildRequires: libglademm-devel
 BuildRequires: libgtksourceviewmm-devel >= 0.3.0
+BuildRequires: libgnome2-devel
 BuildRequires: libvte-devel
 BuildRequires: gconfmm2.6-devel
 BuildRequires: gnome-vfs2-devel
@@ -58,7 +61,8 @@ Requires:       %{lib_name} >= %{version}-%{release}
 Shared libraries for using nemiver
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q 
+%patch0 -p1 -b .libgtop
 
 %build
 %configure2_5x
@@ -93,7 +97,7 @@ mkdir -p $RPM_BUILD_ROOT/%{_datadir}/icons/
 cp %SOURCE1 $RPM_BUILD_ROOT/%{_datadir}/icons/
 rm -f %buildroot%_libdir/nemiver/*/*/*.a %buildroot%_libdir/nemiver/*/*.a %buildroot%_libdir/*.a
 
-%find_lang %name
+%find_lang %name --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -108,6 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 %update_menus
 %post_install_gconf_schemas %{schemas}
 %update_icon_cache hicolor
+%update_scrollkeeper
 
 %preun
 %preun_uninstall_gconf_schemas %{schemas}
@@ -115,6 +120,7 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 %clean_menus
 %clean_icon_cache hicolor
+%clean_scrollkeeper
 
 %files -f %{name}.lang
 %defattr(-,root,root)
@@ -130,7 +136,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_liconsdir}/%name.png
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
-%{_libdir}/%{name}/
+%{_libdir}/%{name}
+%dir %{_datadir}/omf/nemiver
+%{_datadir}/omf/nemiver/*-C.omf
+%lang(sv) %{_datadir}/omf/nemiver/*-sv.omf
 
 %files -n %{lib_name}
 %{_libdir}/*.so.%{major}*
