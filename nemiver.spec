@@ -16,6 +16,7 @@ Patch0:		nemiver-0.4.0-libgtop.patch
 URL:		http://home.gna.org/nemiver/
 License:	GPL
 Group:		Development/Other
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 BuildRequires: libglademm-devel
 BuildRequires: libgtksourceviewmm-devel >= 0.3.0
