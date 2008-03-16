@@ -1,8 +1,6 @@
 %define name	nemiver
-%define version	0.4.0
+%define version	0.5.0
 %define release %mkrel 1
-%define major 0
-%define lib_name %mklibname %{name} %{major}
 
 Name: 	 	%{name}
 Summary: 	Gtkmm front end to the GNU debugger
@@ -11,8 +9,6 @@ Release: 	%{release}
 
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{version}/%{name}-%{version}.tar.bz2
 Source1:	%name.png
-# (fc) 0.4.0-1mdv fix build with libgtop HEAD (SVN)
-Patch0:		nemiver-0.4.0-libgtop.patch
 URL:		http://home.gna.org/nemiver/
 License:	GPL
 Group:		Development/Other
@@ -42,27 +38,9 @@ Requires(postun): desktop-file-utils
 The nemiver project is an effort to develop a gtkmm front end to the
 GNU debugger.
 
-%package -n %{lib_name}
-Summary:        Shared libraries for using nemiver
-Group:          System/Libraries
-Requires:       %{name} >= %{version}-%{release}
-Provides:	libnemiver
-Obsoletes:	libnemiver
-
-%description -n %{lib_name}
-Shared libraries for using nemiver
-
-%package -n %{lib_name}-devel
-Summary:        Shared libraries for using nemiver
-Group:          Development/C++
-Requires:       %{lib_name} >= %{version}-%{release}
-
-%description -n %{lib_name}-devel
-Shared libraries for using nemiver
 
 %prep
 %setup -q 
-%patch0 -p1 -b .libgtop
 
 %build
 %configure2_5x
@@ -91,7 +69,10 @@ mkdir -p $RPM_BUILD_ROOT/%{_datadir}/pixmaps/
 cp %SOURCE1 $RPM_BUILD_ROOT/%{_datadir}/pixmaps/
 mkdir -p $RPM_BUILD_ROOT/%{_datadir}/icons/
 cp %SOURCE1 $RPM_BUILD_ROOT/%{_datadir}/icons/
-rm -f %buildroot%_libdir/nemiver/*/*/*.a %buildroot%_libdir/nemiver/*/*.a %buildroot%_libdir/*.a
+
+#remove unpackaged files
+rm -rf %buildroot%_includedir/* %buildroot%_libdir/pkgconfig
+rm -f %buildroot%_libdir/nemiver/*/*/*.{a,la} %buildroot%_libdir/nemiver/*/*.{a,la} %buildroot%_libdir/nemiver/*.{la,a}
 
 %find_lang %name --with-gnome
 
@@ -99,10 +80,6 @@ rm -f %buildroot%_libdir/nemiver/*/*/*.a %buildroot%_libdir/nemiver/*/*.a %build
 rm -rf $RPM_BUILD_ROOT
 
 %define schemas %{name}-dbgperspective %{name}-workbench
-
-%post -n %lib_name -p /sbin/ldconfig
-
-%postun -n %lib_name -p /sbin/ldconfig
 
 %post
 %update_menus
@@ -132,19 +109,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/%name.png
 %{_miconsdir}/%name.png
 %{_libdir}/%{name}
+%{_mandir}/man1/*
 %dir %{_datadir}/omf/nemiver
 %{_datadir}/omf/nemiver/*-C.omf
 %lang(sv) %{_datadir}/omf/nemiver/*-sv.omf
-
-%files -n %{lib_name}
-%{_libdir}/*.so.%{major}*
-
-%files -n %{lib_name}-devel
-%{_libdir}/*.so
-%{_libdir}/pkgconfig/*
-%{_includedir}/%{name}/*
-%{_libdir}/*.la
-
-
-
+%lang(es) %{_datadir}/omf/nemiver/*-es.omf
+%lang(oc) %{_datadir}/omf/nemiver/*-oc.omf
 
