@@ -28,7 +28,7 @@ BuildRequires: desktop-file-utils
 BuildRequires: libsm-devel
 BuildRequires: ImageMagick
 BuildRequires: gnome-doc-utils
-BuildRequires: devel(libgtkhex) 
+BuildRequires: libgtkhex-devel 
 Requires: gdb
 
 Requires(post): desktop-file-utils 
