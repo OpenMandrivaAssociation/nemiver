@@ -1,6 +1,6 @@
 %define name	nemiver
 %define version	0.5.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Summary: 	Gtkmm front end to the GNU debugger
@@ -28,7 +28,7 @@ BuildRequires: desktop-file-utils
 BuildRequires: libsm-devel
 BuildRequires: ImageMagick
 BuildRequires: gnome-doc-utils
-
+BuildRequires: devel(libgtkhex) 
 Requires: gdb
 
 Requires(post): desktop-file-utils 
@@ -38,12 +38,11 @@ Requires(postun): desktop-file-utils
 The nemiver project is an effort to develop a gtkmm front end to the
 GNU debugger.
 
-
 %prep
 %setup -q 
 
 %build
-%configure2_5x
+%configure2_5x 
 %make
 
 %install
