@@ -68,19 +68,23 @@ rm -rf %{buildroot}
 
 %define schemas %{name}-dbgperspective %{name}-workbench
 
+%if %mdkversion < 200900
 %post
 %update_menus
 %post_install_gconf_schemas %{schemas}
 %update_icon_cache hicolor
 %update_scrollkeeper
+%endif
 
 %preun
 %preun_uninstall_gconf_schemas %{schemas}
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
 %clean_icon_cache hicolor
 %clean_scrollkeeper
+%endif
 
 %files -f %{name}.lang
 %defattr(-,root,root)
