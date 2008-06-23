@@ -1,5 +1,5 @@
 %define name	nemiver
-%define version	0.5.3
+%define version	0.5.4
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -8,7 +8,6 @@ Version: 	%{version}
 Release: 	%{release}
 
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{version}/%{name}-%{version}.tar.bz2
-Source1:	%{name}.png
 URL:		http://home.gna.org/nemiver/
 License:	GPLv2+
 Group:		Development/Other
