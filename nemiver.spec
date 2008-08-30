@@ -1,5 +1,5 @@
 %define name	nemiver
-%define version	0.6.1
+%define version	0.6.2
 %define release %mkrel 1
 
 Name: 	 	%{name}
