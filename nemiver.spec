@@ -1,12 +1,11 @@
 %define name	nemiver
-%define version	0.6.2
+%define version	0.6.3
 %define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	Graphical debugger intended for GNOME
 Version: 	%{version}
 Release: 	%{release}
-
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{version}/%{name}-%{version}.tar.bz2
 URL:		http://home.gna.org/nemiver/
 License:	GPLv2+
@@ -53,7 +52,6 @@ rm -rf %{buildroot}
 desktop-file-install --vendor="" \
   --remove-category="Application" \
    --remove-category="" \
-  --add-category="X-MandrivaLinux-MoreApplications-Development-Tools;" \
   --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 #remove unpackaged files
