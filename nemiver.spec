@@ -1,6 +1,6 @@
 %define name	nemiver
 %define version	0.6.3
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Summary: 	Graphical debugger intended for GNOME
@@ -50,8 +50,7 @@ rm -rf %{buildroot}
 #menu
 
 desktop-file-install --vendor="" \
-  --remove-category="Application" \
-   --remove-category="" \
+  --add-category="Debugger" \
   --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 #remove unpackaged files
