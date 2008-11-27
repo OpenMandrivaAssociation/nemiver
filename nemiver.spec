@@ -1,12 +1,12 @@
 %define name	nemiver
-%define version	0.6.3
-%define release %mkrel 3
+%define version	0.6.4
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	Graphical debugger intended for GNOME
 Version: 	%{version}
 Release: 	%{release}
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{version}/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/0.6/%{name}-%{version}.tar.bz2
 URL:		http://home.gna.org/nemiver/
 License:	GPLv2+
 Group:		Development/Other
