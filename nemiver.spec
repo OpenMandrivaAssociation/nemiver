@@ -26,6 +26,7 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	libsm-devel
 BuildRequires:	gnome-doc-utils
 BuildRequires:	libgtkhex-devel 
+BuildRequires:	intltool
 Requires:	gdb
 
 Requires(post):		desktop-file-utils 
