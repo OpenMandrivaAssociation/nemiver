@@ -6,7 +6,7 @@ Name: 	 	%{name}
 Summary: 	Graphical debugger intended for GNOME
 Version: 	%{version}
 Release: 	%{release}
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/0.6/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{name}-%{version}.tar.bz2
 URL:		http://projects.gnome.org/nemiver/
 License:	GPLv2+
 Group:		Development/Other
