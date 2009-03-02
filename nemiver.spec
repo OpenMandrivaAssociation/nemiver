@@ -1,6 +1,6 @@
 %define name	nemiver
 %define version	0.6.5
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 	 	%{name}
 Summary: 	Graphical debugger intended for GNOME
@@ -28,6 +28,8 @@ BuildRequires:	gnome-doc-utils
 BuildRequires:	libgtkhex-devel 
 BuildRequires:	intltool
 Requires:	gdb
+Obsoletes:	%{_lib}nemiver0
+Obsoletes:	%{_lib}nemiver0-devel
 
 Requires(post):		desktop-file-utils 
 Requires(postun):	desktop-file-utils
