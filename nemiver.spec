@@ -1,6 +1,8 @@
 %define name	nemiver
 %define version	0.6.5
-%define release %mkrel 2
+%define release %mkrel 3
+
+%define git_url git://git.gnome.org/nemiver
 
 Name: 	 	%{name}
 Summary: 	Graphical debugger intended for GNOME
@@ -8,6 +10,8 @@ Version: 	%{version}
 Release: 	%{release}
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{name}-%{version}.tar.bz2
 URL:		http://projects.gnome.org/nemiver/
+# (fc) 0.6.5-3mdv update ephy-spinner (GIT)
+Patch0:		nemiver-0.6.5-update-ephy-spinner.patch
 License:	GPLv2+
 Group:		Development/Other
 BuildRoot:	%{_tmppath}/%{name}-buildroot
@@ -41,6 +45,7 @@ well known GNU Debugger gdb to debug C / C++ programs.
 
 %prep
 %setup -q 
+%patch0 -p1 -b .update-ephy-spinner
 
 %build
 %configure2_5x 
@@ -49,12 +54,6 @@ well known GNU Debugger gdb to debug C / C++ programs.
 %install
 rm -rf %{buildroot}
 %makeinstall_std
-
-#menu
-
-desktop-file-install --vendor="" \
-  --add-category="Debugger" \
-  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 #remove unpackaged files
 rm -rf %{buildroot}%{_includedir}/* %{buildroot}%{_libdir}/pkgconfig
