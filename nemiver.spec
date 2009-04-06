@@ -1,6 +1,6 @@
 %define name	nemiver
-%define version	0.6.5
-%define release %mkrel 3
+%define version	0.6.6
+%define release %mkrel 1
 
 %define git_url git://git.gnome.org/nemiver
 
@@ -10,8 +10,6 @@ Version: 	%{version}
 Release: 	%{release}
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{name}-%{version}.tar.bz2
 URL:		http://projects.gnome.org/nemiver/
-# (fc) 0.6.5-3mdv update ephy-spinner (GIT)
-Patch0:		nemiver-0.6.5-update-ephy-spinner.patch
 License:	GPLv2+
 Group:		Development/Other
 BuildRoot:	%{_tmppath}/%{name}-buildroot
@@ -45,7 +43,6 @@ well known GNU Debugger gdb to debug C / C++ programs.
 
 %prep
 %setup -q 
-%patch0 -p1 -b .update-ephy-spinner
 
 %build
 %configure2_5x 
