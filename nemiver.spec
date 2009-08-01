@@ -1,5 +1,5 @@
 %define name	nemiver
-%define version	0.7.0
+%define version	0.7.1
 %define release %mkrel 1
 
 %define git_url git://git.gnome.org/nemiver
@@ -93,7 +93,7 @@ rm -rf %{buildroot}
 %{_libdir}/%{name}
 %{_mandir}/man1/*
 %dir %{_datadir}/omf/nemiver
-%{_datadir}/omf/nemiver/*-C.omf
+%{_datadir}/omf/nemiver/*-*.omf
 %lang(sv) %{_datadir}/omf/nemiver/*-sv.omf
 %lang(es) %{_datadir}/omf/nemiver/*-es.omf
 %lang(oc) %{_datadir}/omf/nemiver/*-oc.omf
