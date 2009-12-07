@@ -1,5 +1,5 @@
 %define name	nemiver
-%define version	0.7.2
+%define version	0.7.3
 %define release %mkrel 1
 
 %define git_url git://git.gnome.org/nemiver
