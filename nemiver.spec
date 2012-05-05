@@ -38,7 +38,7 @@ well known GNU Debugger gdb to debug C / C++ programs.
 %setup -q 
 
 %build
-%configure2_5x --enable-gsettings=yes --disable-schemas-compile --disable-schemas-install --disable-static
+%configure2_5x --enable-gsettings=yes --disable-scrollkeeper --disable-schemas-compile --disable-schemas-install --disable-static
 %make
 
 %install
@@ -51,7 +51,6 @@ find %{buildroot} -name *.la -delete
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc AUTHORS ChangeLog NEWS TODO* README
 %{_bindir}/%{name}
 %{_datadir}/applications/*
