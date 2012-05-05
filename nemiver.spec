@@ -15,7 +15,6 @@ BuildRequires: pkgconfig(gthread-2.0) >= 2.14
 BuildRequires: pkgconfig(gtk+-3.0) >= 2.22
 BuildRequires: pkgconfig(gtkhex-3) >= 2.90
 BuildRequires: pkgconfig(gtkmm-3.0) >= 3.0
-BuildRequires: pkgconfig(gtksourceviewmm-3.0) >= 3.0
 BuildRequires: pkgconfig(libgtop-2.0) >= 2.14
 BuildRequires: pkgconfig(libxml-2.0) >= 2.6.22
 BuildRequires: pkgconfig(sqlite3) >= 3.0
