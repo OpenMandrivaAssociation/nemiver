@@ -19,6 +19,7 @@ BuildRequires: pkgconfig(libgtop-2.0) >= 2.14
 BuildRequires: pkgconfig(libxml-2.0) >= 2.6.22
 BuildRequires: pkgconfig(sqlite3) >= 3.0
 BuildRequires: pkgconfig(vte-2.90) >= 0.28
+BuildRequires: pkgconfig(gtksourceviewmm-3.0)
 BuildRequires: intltool
 BuildRequires: gdb
 BuildRequires: gnome-doc-utils >= 0.3.2
