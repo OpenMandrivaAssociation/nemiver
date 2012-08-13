@@ -9,13 +9,13 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{name}-%{version}.tar.xz
 
 BuildRequires: dconf
 BuildRequires: gdb
-BuildRequires: gnome-doc-utils >= 0.3.2
 BuildRequires: intltool
 BuildRequires: boost-devel
 BuildRequires: pkgconfig(gdlmm-3.0) >= 3.0
 BuildRequires: pkgconfig(giomm-2.4) >= 2.15.2
 BuildRequires: pkgconfig(glibmm-2.4) >= 2.14
 BuildRequires: pkgconfig(gmodule-2.0) >= 2.14
+BuildRequires: pkgconfig(gnome-doc-utils)
 BuildRequires: pkgconfig(gsettings-desktop-schemas) >= 0.0.1
 BuildRequires: pkgconfig(gthread-2.0) >= 2.14
 BuildRequires: pkgconfig(gtk+-3.0) >= 2.22
