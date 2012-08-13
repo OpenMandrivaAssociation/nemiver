@@ -1,6 +1,6 @@
 Summary: 	Graphical debugger intended for GNOME
 Name: 	 	nemiver
-Version: 	0.9.2
+Version: 	0.9.3
 Release: 	1
 License:	GPLv2+
 Group:		Development/Other
