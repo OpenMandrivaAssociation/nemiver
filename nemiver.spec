@@ -11,6 +11,7 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{url_ver}/%{name}-%{vers
 BuildRequires:	dconf
 BuildRequires:	gdb
 BuildRequires:	intltool
+BuildRequires:	itstool
 BuildRequires:	boost-devel
 BuildRequires:	pkgconfig(gdlmm-3.0) >= 3.0
 BuildRequires:	pkgconfig(giomm-2.4) >= 2.15.2
