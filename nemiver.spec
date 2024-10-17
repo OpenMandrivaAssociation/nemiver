@@ -6,7 +6,7 @@ Version:	0.9.5
 Release:	2
 License:	GPLv2+
 Group:		Development/Other
-Url:		http://projects.gnome.org/nemiver/
+Url:		https://projects.gnome.org/nemiver/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	dconf
 BuildRequires:	gdb
