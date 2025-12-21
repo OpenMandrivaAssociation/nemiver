@@ -8,6 +8,11 @@ License:	GPLv2+
 Group:		Development/Other
 Url:		https://projects.gnome.org/nemiver/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/nemiver/%{url_ver}/%{name}-%{version}.tar.xz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	dconf
 BuildRequires:	gdb
 BuildRequires:	intltool
